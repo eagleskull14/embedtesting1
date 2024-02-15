@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embed Test</title>
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      let m = document.createElement("meta");
+      m.setAttribute("property", "og:image");
+      m.setAttribute("content", params.get("pic"));
+      document.head.appendChild(m);
+    </script>
+    <meta property="og:title" content="Embed Test with Params!" />
+    <meta property="og:type" content="video.movie" />
+    <meta
+      property="og:url"
+      content="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    />
+    <meta property="og:description" content="used custom stuff yipee" />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:locale" content="en_EN" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:site_name" content="embed and param tests" />
+    <meta
+      property="og:video"
+      content="https://eagleskull14.github.io/embedtesting1/Download.mp4"
+    />
+  </head>
+  <body>
+    <script>
+      document.body.innerHTML =
+        `
+
+            <p>Testing, if you know web perams use those for an image, var name = pic.</p>
+            <br>
+            <p>For example, https://eagleskull14.github.io/embedtesting1/params.html?pic=https://example.com/example.png</p>
+            <br>
+            <br>
+            <br>
+            <p>If you did this, the image looks like this (width and height are automaticly set to 250px by 250px because i said so): </p>
+            <img src=` +
+        params.get("pic") +
+        ` alt="Your Image Here!" width="250" height="250">
+
+        `;
+    </script>
+  </body>
+</html>
